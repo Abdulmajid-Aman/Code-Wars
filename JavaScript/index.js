@@ -172,3 +172,87 @@ let arr = [34, -345, -1, 100]
 
 console.log(findSmallestInt(arr));
 
+// ==================================================================================================================
+
+
+/* 
+Find the last element of the given argument(s).
+
+Examples
+last([1, 2, 3, 4] ) // =>  4
+last("xyz")         // => "z"
+last(1, 2, 3, 4)    // =>  4
+In javascript and CoffeeScript a list will be an array, a string or the list of arguments.
+
+ */
+
+//============================================================================================================================================
+
+
+function last(list) {
+  if (Array.isArray(list)) {
+    return list[list.length -1]
+    
+  } else if(typeof(list) === 'string') {
+    return list.charAt(list.length - 1)
+  } else {
+    return arguments[arguments.length - 1]
+  }
+}
+
+let test = 'Abdulmajid'
+console.log(test.charAt(test.length - 1));
+
+console.log(last([1,2,3,4,5]));
+console.log(last('aman'));
+console.log(last(1,2,3,4,5));
+
+
+
+// When you use the rest parameter, you receive the arguments as an array
+// Argument object is an array-like object. This means it can be accessed using its indexed, has length property. However, it is not a true array, so you cannot use array methods like pop(), push() and forEach()
+
+/* 
+    Example
+================
+
+function foo(a, b) {
+  console.log(arguments); // [a, b, c, d] (even though only a and b are defined)
+  console.log(arguments[0]); // a
+  console.log(arguments[1]); // b
+  console.log(arguments[2]); // c
+  console.log(arguments[3]); // d
+}
+
+foo(1, 2, 3, 4);
+
+*/
+
+function foo() {
+  console.log(this);
+  
+}
+
+let obj = {foo: foo}
+obj.foo()
+
+/* 
+Object Methods:
+
+Creating objects: let obj = { key: value, ... }; or let obj = new Object();
+Accessing properties: obj.key or obj['key']
+Adding properties: obj.newKey = value;
+Deleting properties: delete obj.key;
+Checking property existence: key in obj or obj.hasOwnProperty(key)
+Iterating over properties: for...in loop or Object.keys(obj).forEach(...)
+Merging objects: Object.assign(target, source); (shallow copy)
+Cloning objects: let clone = { ...obj }; (shallow copy) or let clone = JSON.parse(JSON.stringify(obj)); (deep copy)
+The this Keyword:
+
+Global context: this refers to the global object (usually window or global)
+Function context: this refers to the function's caller (e.g., an object that owns the function)
+Method context: this refers to the object that the method is called on
+Event context: this refers to the element that triggered the event
+Arrow function context: this inherits the context from its surrounding scope
+Binding this: func.bind(thisValue) or func.call(thisValue) or func.apply(thisValue)
+*/
