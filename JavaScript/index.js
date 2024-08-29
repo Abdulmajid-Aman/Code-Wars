@@ -256,3 +256,59 @@ Event context: this refers to the element that triggered the event
 Arrow function context: this inherits the context from its surrounding scope
 Binding this: func.bind(thisValue) or func.call(thisValue) or func.apply(thisValue)
 */
+
+// Staircase and pyramid
+/* 
+The staircase problem
+*/
+
+function stairs() {
+  let result = '';
+  for (let i = 0; i < 9; i++) {
+    let row = '';
+    for (let j = 0; j <= i; j++) {
+      row += '*';
+    }
+    result += row + '\n';
+  }
+  console.log(result);
+}
+stairs();
+
+// Reversing the staircase
+
+function reverse_stairs() {
+  let result = ''
+  for(let i = 0; i < 9; i ++) {
+    let rows = ''
+    for (let j = 9 - i; j >= 0; j --) {
+      rows += "*" 
+    }
+    result += rows + '\n'
+  }
+  console.log(result);
+}
+
+reverse_stairs();
+
+
+function building_pyramid(n) {
+  let result = ''
+  for (let i = 0; i < n; i ++) {
+    // Building the spaces inside each line
+    let spaces = ''
+    for(let j = 0; j < n - i - 1; j++) {
+      spaces += ' '
+    }
+    let row = ''
+    for (let r = 0; r < i * 2 + 1; r ++) {
+      row += '*'
+    }
+    result += spaces + row + '\n'
+  }
+  console.log(result);
+  
+}
+
+building_pyramid(5)
+
