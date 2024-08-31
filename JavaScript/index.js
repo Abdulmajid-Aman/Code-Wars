@@ -312,3 +312,117 @@ function building_pyramid(n) {
 
 building_pyramid(5)
 
+
+/* 
+Function: add_numbers (2 points)
+
+Write a Python function named add_numbers that takes two parameters num1 and num2, and returns the sum of the two numbers.
+*/
+
+function add_numbers(num1, num2) {
+  console.log(num1 + num2);
+  
+}
+
+// 2. Function: is_even (2 points)
+
+/* Write a Python function named is_even that takes a single parameter number and returns True if the number is even, and False otherwise. */
+
+function is_even(number) {
+  if(number % 2 === 0) {
+    console.log('true');
+  } else {
+    console.log('false');
+    
+  }
+}
+
+
+// 3. Function: count_vowels (2 points)
+
+/* Write a Python function named count_vowels that takes a string text as input and returns the count of vowels (a, e, i, o, u) in the string. Ignore case sensitivity. */
+
+function count_vowels(text) {
+  let count = 0
+  let vowels = 'aeiou'
+  for (let char of text.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++
+    }
+  }
+  console.log(count);
+  
+}
+
+
+
+
+// 4. Function: reverse_string (2 points)
+
+/* Write a Python function named reverse_string that takes a string text as input and returns the reversed version of that string. */
+
+function reverse_string(text) {
+  let reverse = text.split('').reverse().join('')
+  console.log(reverse);
+  
+}
+
+// 5. Function: calculate_factorial (2 points)
+
+/* Write a Python function named calculate_factorial that takes a non-negative integer n as input and returns the factorial of that number. The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. */
+
+function calculate_factorial(n) {
+  let product = 1;
+  for (let i = 1; i <= n; i++) {
+    product *= i;
+  }
+  console.log(product);
+}
+
+
+/* Write a function called findMax that takes an array of numbers as input and returns the maximum value in the array. If the array is empty, the function should return null. */
+
+function findMax(arr) {
+  if (arr.length === 0) {
+    return null
+  } else {
+    return Math.max(...arr)
+  }
+}
+
+
+/* Write a function called countDuplicates that takes an array of strings as input and returns an object with the count of each duplicate string. If a string appears only once, it should not be included in the output object. */
+
+function findDuplicates(arr) {
+  let obj = {};
+  for (let item of arr) {
+    if (item in obj) {
+      obj[item]++
+    } else {
+      obj[item] = 1;
+      console.log(obj);
+      
+    }
+  }
+  let duplicates = {};
+  for (let item in obj) {
+    if (obj[item] > 1) {
+      duplicates[item] = obj[item];
+    }
+  }
+  return duplicates;
+}
+
+// Example usage:
+let arrray = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+let duplicates = findDuplicates(arrray);
+console.log(duplicates); // Output: {2: 2, 3: 3, 4: 4}
+
+console.log(findDuplicates(['apple', 'banana', 'apple', 'orange', 'banana', 'banana']));
+
+// returns { apple: 2, banana: 3 }
+console.log(findDuplicates(['hello', 'world', 'hello', 'hello', 'world', 'world', 'world']));
+
+// returns { hello: 3, world: 4 }
+console.log(findDuplicates(['a', 'b', 'c', 'd', 'e']) );
+// returns {}
